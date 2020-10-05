@@ -1,0 +1,211 @@
+/* ==UserStyle==
+@name         Webassign Dark Theme
+@namespace    https://github.com/PseudonymPatel/webassign-darkmode
+@homepageURL  https://github.com/PseudonymPatel/webassign-darkmode
+@updateURL    https://raw.githubusercontent.com/PseudonymPatel/webassign-darkmode/master/webassign-darkmode.css
+@version      0.0.2
+@license      MIT
+@preprocessor default
+
+==/UserStyle== */
+
+/* -----------------------------------------
+*   Body and site-wide styling 
+*  -----------------------------------------
+*/
+@-moz-document domain("webassign.net") {
+	
+	:root {
+		--main-color: #121212;
+		--svg-color: rgb(176, 179, 198);
+		--main-text-color: var(--svg-color);
+		--blue-text-color: rgb(0, 123, 191);
+		--border-color: #676767;
+
+		--first-layer-brightness: 0.1;
+		--second-layer-brightness: 0.2;
+	}
+
+	body {
+		background-color: var(--main-color);
+		color: var(--main-text-color);
+	}
+
+	#webAssignContent svg,
+	#studentHeader svg {
+		fill: var(--svg-color);
+	}
+
+	/* -------------
+	*  Page header 
+	* -------------
+	*/
+	#studentHeader {
+		color: var(--main-text-color);
+	}
+
+	/* Small language indicator color */
+	#studentHeader div div div div {
+		color: var(--main-text-color);
+	}
+
+	#studentHeader div div div ul {
+		background-color: var(--main-color);
+	}
+
+	/* Purchase now countdown timer */
+	#js-countdown-purchase-access {
+		background-color: rgba(255, 255, 255, var(--first-layer-brightness));
+	}
+	#js-countdown-purchase-access div {
+		box-shadow: none;
+	}
+	#js-countdown-purchase-access h2 {
+		color: var(--blue-text-color);
+	}
+
+	/* Main page header */
+	#js-page-top div h1 {
+		color: var(--blue-text-color);
+	}
+	#js-page-top div,
+	#js-page-top div span {
+		color: var(--main-text-color);
+	}
+
+	/* Main page cards (things like assignments, grades, etc. */
+	#js-student-home-notices section,
+	.studentModuleLayout section {
+		background-color: rgba(255, 255, 255, var(--first-layer-brightness));
+		border-color: var(--main-color);
+	}
+	#js-student-home-notices h2,
+	.studentModuleLayout h2 {
+		background-color: rgba(255, 255, 255, var(--second-layer-brightness));
+		border-width: 0;
+		color: var(--main-text-color);
+	}
+	#js-student-home-notices p,
+	#js-student-home-notices h3,
+	#js-student-home-notices li,
+	#js-student-home-notices div button,
+	.studentModuleLayout div p,
+	.studentModuleLayout div h3,
+	.studentModuleLayout div li,
+	.studentModuleLayout div button {
+		color: var(--main-text-color);
+	}
+	/* Specific to assignments card*/
+	#js-student-myAssignmentsWrapper section a {
+		background-color: transparent;
+		border-color: var(--border-color);
+	}
+	#js-student-myAssignmentsWrapper section a div {
+		color: var(--main-text-color);
+	}
+	#js-student-myAssignmentsWrapper section div {
+		border-color: var(--border-color);
+	}
+	/* specific to resources card */
+	#resourcesTitle button {
+		background-color: #FFF0;
+		color: var(--main-text-color);
+		border-width: 0;
+	}
+
+	/* ------------------------------------------
+	 *  My assignments page
+	 * ------------------------------------------
+	 */
+	#js-student-myAssignmentsPage section table thead tr,
+	#js-student-myAssignmentsPage section table thead th {
+		background-color: rgba(255, 255, 255, var(--second-layer-brightness));
+		color: var(--main-text-color);
+		border-color: var(--border-color);
+	}
+	#js-student-myAssignmentsPage section {
+		border-width: 0;
+	}
+	#js-student-myAssignmentsPage section table tbody > tr {
+		background-color: rgba(255, 255, 255, var(--first-layer-brightness));
+		border-color: var(--border-color);
+	}
+	#js-student-myAssignmentsPage section table tbody > tr > th {
+		color: var(--main-text-color);
+	}
+	
+}
+
+@-moz-document url-prefix("https://www.webassign.net/wa-auth/login") {
+	
+	html {
+		background-color: transparent;
+	}
+	
+	.this-is-hydra,
+	.login-container[_ngcontent-c1] {
+		background-color: var(--main-color);
+	}
+	
+	.this-is-hydra h2,
+	.this-is-hydra div {
+		color: var(--main-text-color);
+	}
+	
+	.this-is-hydra .login-container .login-form[_ngcontent-c1] {
+		background-color: rgba(255, 255, 255, var(--first-layer-brightness));
+		border-width: 0;
+		border-radius: 0.3125rem;
+	}
+	
+	.header-bar .enroll {
+		background-color: #cc0000;
+		color: #FFFFFF;
+	}
+	
+	.auth-container a,
+	.input-group .forget {
+		color: var(--main-text-color);
+	}
+	.auth-container a:hover {
+		color: var(--blue-text-color);
+	}
+	
+	.auth-container .input-group input {
+		background-color: rgba(255, 255, 255, .08);
+		box-shadow: none;
+		border-color: var(--border-color);
+		color: var(--main-text-color);
+	}
+}
+
+@-moz-document url-prefix("https://www.webassign.net/web/Student") {
+	#js-assignment-header h1 {
+		color: var(--blue-text-color);
+	}
+	
+	/* ----- Header stuff -------- */
+	#js-assignment-header div,
+	#js-assignment-header div span {
+		color: var(--main-text-color);
+	}
+	#js-assignment-header div svg {
+		fill: var(--main-text-color);
+	}
+	
+	/* ------- Assignment information cards -----------*/
+	#js-assignment-wrapper > div > div,
+	#js-assignment-wrapper > div > section {
+		color: var(--main-text-color);
+		background-color: rgba(255, 255, 255, var(--first-layer-brightness));
+		margin: 5px;
+		border-width: 0;
+		border-radius: 0 0 0.3125rem 0.3125rem;
+	}
+	#js-assignment-wrapper > div > div > h2,
+	#js-assignment-wrapper > div > section h2 {
+		color: var(--main-text-color);
+		background-color: rgba(255, 255, 255, var(--second-layer-brightness));
+		border-color: var(--border-color);
+	}
+}
