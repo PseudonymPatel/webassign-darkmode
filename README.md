@@ -4,7 +4,7 @@ My take on a darkmode for the assignment/problem set app webAssign
 # Installation
 Installation is real simple!
 1. Install Stylus for either Firefox, Chrome or Opera or Cascadea for Safari.
-2. Go to (this)[https://raw.githubusercontent.com/PseudonymPatel/webassign-darkmode/master/webassign-darkmode.user.css]  page and a thing should come up asking to install the stylesheet. 
+2. Go to [this](https://raw.githubusercontent.com/PseudonymPatel/webassign-darkmode/master/webassign-darkmode.user.css)  page and a thing should come up asking to install the stylesheet. 
 3. Hit install or whatever
 4. Updates should be automatic or you can go to the extension to check for updates.
 
