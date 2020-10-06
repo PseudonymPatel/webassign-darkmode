@@ -7,6 +7,13 @@
 @license      MIT
 @preprocessor default
 
+@var color main-color "Main color for everything to be based on" #121212
+@var color border-color "Color to make borders" #676767
+@var number first-layer-brightness "How bright to make first level of brightness (0 - 1)" 0.1
+@var number second-layer-brightness "brightness of second level of brightness (0 - 1)" 0.2
+@var color blue-text-color "Color to make blue things/accent" rgb(0, 123, 191)
+@var color main-text-color "Color to make majority of text" rgb(176, 179, 198)
+
 ==/UserStyle== */
 
 /* -----------------------------------------
@@ -16,14 +23,7 @@
 @-moz-document domain("webassign.net") {
 	
 	:root {
-		--main-color: #121212;
-		--svg-color: rgb(176, 179, 198);
-		--main-text-color: var(--svg-color);
-		--blue-text-color: rgb(0, 123, 191);
-		--border-color: #676767;
-
-		--first-layer-brightness: 0.1;
-		--second-layer-brightness: 0.2;
+		--svg-color: var(--main-text-color);
 	}
 
 	body {
