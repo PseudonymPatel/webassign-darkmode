@@ -3,7 +3,7 @@
 @namespace    https://github.com/PseudonymPatel/webassign-darkmode
 @homepageURL  https://github.com/PseudonymPatel/webassign-darkmode
 @updateURL    https://raw.githubusercontent.com/PseudonymPatel/webassign-darkmode/master/webassign-darkmode.user.css
-@version      0.1.1
+@version      0.1.2
 @license      MIT
 @preprocessor default
 
@@ -314,6 +314,10 @@
 		border-style: solid;
 	}
 	
+	#webAssign input {
+		color: #FFF;
+	}
+	
 	.additional {
 		border-color: var(--border-color);
 		border-radius: 5px;
@@ -340,6 +344,11 @@
 		border-color: var(--blue-text-color);
 		border-width: 2px;
 		border-radius: 5px;
+	}
+	
+	.static {
+		color: var(--main-text-color);
+		background-color: var(--main-color);
 	}
 	
 	/* ----- Page footer with submit assignment button ------- */
