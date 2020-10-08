@@ -3,7 +3,7 @@
 @namespace    https://github.com/PseudonymPatel/webassign-darkmode
 @homepageURL  https://github.com/PseudonymPatel/webassign-darkmode
 @updateURL    https://raw.githubusercontent.com/PseudonymPatel/webassign-darkmode/master/webassign-darkmode.user.css
-@version      0.1.3
+@version      0.1.4
 @license      MIT
 @preprocessor default
 
@@ -269,6 +269,12 @@
 		border-width: 0;
 	}
 	
+	.qContent .wa1par,
+	.qContent .sublabel,
+	.qContent .wa1ans {
+		color: var(--main-text-color);
+	}
+	
 	.waQBox > .qAlert {
 		background-color: transparent;
 		border-width: 0;
@@ -349,6 +355,20 @@
 	.static {
 		color: var(--main-text-color);
 		background-color: var(--main-color);
+	}
+	
+	.qContent .pse8ae .pse8QuestionBlock {
+		background-color: transparent;
+	}
+	
+	.qContent .pse8ae .pse8Header {
+		border-color: var(--border-color);
+		border-bottom: 1px dashed;
+	}
+	
+	.qContent .pse8ae .pse8HeaderTitle,
+	.qContent .pse8ae .pse8HintTitle {
+		color: var(--blue-text-color);
 	}
 	
 	/* --------- Testing/accordian stuff ------------ */
