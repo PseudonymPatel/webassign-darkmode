@@ -3,7 +3,7 @@
 @namespace    https://github.com/PseudonymPatel/webassign-darkmode
 @homepageURL  https://github.com/PseudonymPatel/webassign-darkmode
 @updateURL    https://raw.githubusercontent.com/PseudonymPatel/webassign-darkmode/master/webassign-darkmode.user.css
-@version      0.1.2
+@version      0.1.0
 @license      MIT
 @preprocessor default
 
@@ -349,6 +349,20 @@
 	.static {
 		color: var(--main-text-color);
 		background-color: var(--main-color);
+	}
+	
+	/* --------- Testing/accordian stuff ------------ */
+	.qContent .accordion .element {
+		background-color: transparent;
+	}
+	
+	.qContent ul.accordion > li {
+		background-color: transparent;
+		border-color: var(--border-color);
+	}
+	
+	.qContent ul.accordion li .titleBar {
+		background-color: rgba(255, 255, 255, var(--first-layer-brightness));
 	}
 	
 	/* ----- Page footer with submit assignment button ------- */
