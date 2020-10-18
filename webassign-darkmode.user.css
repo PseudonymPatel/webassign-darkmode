@@ -3,7 +3,7 @@
 @namespace    https://github.com/PseudonymPatel/webassign-darkmode
 @homepageURL  https://github.com/PseudonymPatel/webassign-darkmode
 @updateURL    https://raw.githubusercontent.com/PseudonymPatel/webassign-darkmode/master/webassign-darkmode.user.css
-@version      0.1.4
+@version      0.1.5
 @license      MIT
 @preprocessor default
 
@@ -135,6 +135,33 @@
 		color: var(--main-text-color);
 	}
 	
+    /* ------------------------------------------
+     *  Main Page
+     * ------------------------------------------
+     */
+    .nav-header .genesis-nav-menu .menu-item.search {
+        border-top-color: transparent;
+    }
+    .nav-header .genesis-nav-menu > .menu-item {
+        border-top-color: var(--blue-text-color);
+    }
+    .nav-header .search input[type=text] {
+        background: var(--main-color);
+    }
+    .site-inner h2 span {
+        background-color: var(--main-color);
+        color: #cc0000;
+    }
+    .site-inner .wrap .home-about-boxes a {
+        background-color: rgba(255, 255, 255, var(--first-layer-brightness));
+        color: lightgray;
+        border-top-color: var(--border-color);
+    }
+    .footer-widgets {
+        background-color: transparent;
+        border-width: 1px;
+        border-color: var(--border-color);
+    }
 }
 
 @-moz-document url-prefix("https://www.webassign.net/wa-auth/login") {
