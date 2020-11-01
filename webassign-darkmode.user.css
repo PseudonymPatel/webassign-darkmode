@@ -3,7 +3,7 @@
 @namespace    https://github.com/PseudonymPatel/webassign-darkmode
 @homepageURL  https://github.com/PseudonymPatel/webassign-darkmode
 @updateURL    https://raw.githubusercontent.com/PseudonymPatel/webassign-darkmode/master/webassign-darkmode.user.css
-@version      0.2.1
+@version      0.3.0
 @license      MIT
 @preprocessor default
 
@@ -155,9 +155,58 @@
         background-color: var(--blue-text-color);
         color: whitesmoke;
     }
-	
+    
     /* ------------------------------------------
-     *  Main Page
+	 *  Calendar Page, need !important due to inline styling
+	 * ------------------------------------------
+	 */
+    .studentCalendarBorder,
+    .studentCalendar {
+        border: none !important;
+    }
+    
+    .studentCalendar .calendarTop {
+        background-color: rgba(255, 255, 255, var(--second-layer-brightness)) !important;
+        border-radius: 0.3125rem 0.3125rem 0 0;
+        font-size: 1em;
+        border-bottom: solid 1px var(--border-color); 
+    }
+    .studentCalendar .calendarTop a {
+        color: var(--blue-text-color);
+    }
+    .studentCalendar .calendarTop a:hover {
+        color: var(--main-text-color);
+    }
+    
+    .studentCalendar .dayLabels {
+        background: rgba(255, 255, 255, var(--first-layer-brightness)) !important;
+        padding: 4px 0;
+    }
+    
+    .studentCalendar .days {
+        background-color: transparent !important;
+    }
+    
+    .studentCalendar .days li {
+        background-color: rgba(255, 255, 255, var(--first-layer-brightness));
+        border-radius: 0 0 5px 5px;
+        width: calc(100% / 7);
+    }
+    .studentCalendar .days li .cNum { /* day numbers */
+        background-color: rgba(255, 255, 255, var(--second-layer-brightness));
+        border-radius: 5px 5px 0 0;
+    }
+    
+    .studentCalendar .days li a {
+        color: var(--blue-text-color)
+    }
+    
+    .studentCalendar .days li.weekEnd {
+        width: calc(100% / 7 - 4px);
+    }
+    
+    /* ------------------------------------------
+     *  Main Page (landing page)
      * ------------------------------------------
      */
     .nav-header .genesis-nav-menu .menu-item.search {
