@@ -3,7 +3,7 @@
 @namespace    https://github.com/PseudonymPatel/webassign-darkmode
 @homepageURL  https://github.com/PseudonymPatel/webassign-darkmode
 @updateURL    https://raw.githubusercontent.com/PseudonymPatel/webassign-darkmode/master/webassign-darkmode.user.css
-@version      0.3.1
+@version      0.3.2
 @license      MIT
 @preprocessor default
 
@@ -434,6 +434,10 @@
 		color: var(--main-text-color);
 		border-width: 0;
 	}
+    
+    img[src^='/latex'], img[src^='/cgi-perl'] {
+        background-color: white;
+    }
 	
 	/* --------- Text Fields and Buttons --------------- */
 	
@@ -516,7 +520,30 @@
 	.qContent ul.accordion li .titleBar {
 		background-color: rgba(255, 255, 255, var(--first-layer-brightness));
 	}
+    
+    /* ---------- Details/Notes/Ask Teacher/Practice Another accordions ---------- */
+    .js-question-header > article > section > div > div > div:not(p) {
+        background-color: transparent;
+    }
 	
+    /* ---------- Solution/Explanation Container ------------------ */
+    .qContent .solutionContainer {
+        border-radius: 5px;
+        border: 1px solid var(--border-color);
+    }
+    
+    .solutionContainer .solutionHeadContainer {
+        background-color: rgba(255, 255, 255, var(--first-layer-brightness));
+        border-radius: 5px 5px 0 0;
+        border-bottom: 1px solid var(--border-color);
+        font-weight: bold;
+        color: var(--blue-text-color)
+    }
+    
+    .solutionContainer .solutionContent {
+        padding: 10px;
+    }
+    
 	/* ----- Page footer with submit assignment button ------- */
 	#js-page-bottom > div > div {
 		background-color: rgba(255, 255, 255, var(--first-layer-brightness));
