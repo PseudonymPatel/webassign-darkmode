@@ -3,7 +3,7 @@
 @namespace    https://github.com/PseudonymPatel/webassign-darkmode
 @homepageURL  https://github.com/PseudonymPatel/webassign-darkmode
 @updateURL    https://raw.githubusercontent.com/PseudonymPatel/webassign-darkmode/master/webassign-darkmode.user.css
-@version      0.3.2
+@version      0.4.0
 @license      MIT
 @preprocessor default
 
@@ -15,105 +15,104 @@
 @var color main-text-color "Color to make majority of text" rgb(176, 179, 198)
 
 ==/UserStyle== */
-
 /* -----------------------------------------
 *   Body and site-wide styling 
 *  -----------------------------------------
 */
 @-moz-document domain("webassign.net") {
-	
-	:root {
-		--svg-color: var(--main-text-color);
-	}
 
-	body {
-		background-color: var(--main-color);
-		color: var(--main-text-color);
-	}
+    :root {
+        --svg-color: var(--main-text-color);
+    }
 
-	#webAssignContent svg,
-	#studentHeader svg {
-		fill: var(--svg-color);
-	}
+    body {
+        background-color: var(--main-color);
+        color: var(--main-text-color);
+    }
 
-	/* -------------
+    #webAssignContent svg,
+    #studentHeader svg {
+        fill: var(--svg-color);
+    }
+
+    /* -------------
 	*  Page header 
 	* -------------
 	*/
-	#studentHeader {
-		color: var(--main-text-color);
-	}
+    #studentHeader {
+        color: var(--main-text-color);
+    }
 
-	/* Small language indicator color */
-	#studentHeader div div div div {
-		color: var(--main-text-color);
-	}
+    /* Small language indicator color */
+    #studentHeader div div div div {
+        color: var(--main-text-color);
+    }
 
-	#studentHeader div div div ul {
-		background-color: var(--main-color);
-	}
+    #studentHeader div div div ul {
+        background-color: var(--main-color);
+    }
 
-	/* Purchase now countdown timer */
-	#js-countdown-purchase-access {
-		background-color: rgba(255, 255, 255, var(--first-layer-brightness));
-	}
-	#js-countdown-purchase-access div {
-		box-shadow: none;
-	}
-	#js-countdown-purchase-access h2 {
-		color: var(--blue-text-color);
-	}
+    /* Purchase now countdown timer */
+    #js-countdown-purchase-access {
+        background-color: rgba(255, 255, 255, var(--first-layer-brightness));
+    }
+    #js-countdown-purchase-access div {
+        box-shadow: none;
+    }
+    #js-countdown-purchase-access h2 {
+        color: var(--blue-text-color);
+    }
 
-	/* Main page header */
-	#js-page-top div h1 {
-		color: var(--blue-text-color);
-	}
-	#js-page-top div,
-	#js-page-top div span {
-		color: var(--main-text-color);
-	}
+    /* Main page header */
+    #js-page-top div h1 {
+        color: var(--blue-text-color);
+    }
+    #js-page-top div,
+    #js-page-top div span {
+        color: var(--main-text-color);
+    }
 
-	/* Main page cards (things like assignments, grades, etc. */
-	#js-student-home-notices section,
-	.studentModuleLayout section {
-		background-color: rgba(255, 255, 255, var(--first-layer-brightness));
-		border-color: var(--main-color);
-		border-width: 0;
+    /* Main page cards (things like assignments, grades, etc. */
+    #js-student-home-notices section,
+    .studentModuleLayout section {
+        background-color: rgba(255, 255, 255, var(--first-layer-brightness));
+        border-color: var(--main-color);
+        border-width: 0;
         padding-bottom: 3px;
-	}
-	#js-student-home-notices h2,
-	.studentModuleLayout h2 {
-		background-color: rgba(255, 255, 255, var(--second-layer-brightness));
-		border-width: 0;
-		color: var(--main-text-color);
-	}
-	#js-student-home-notices p,
-	#js-student-home-notices h3,
-	#js-student-home-notices li,
-	#js-student-home-notices div button,
-	.studentModuleLayout div p,
-	.studentModuleLayout div h3,
-	.studentModuleLayout div li,
-	.studentModuleLayout div button {
-		color: var(--main-text-color);
-	}
-	/* Specific to assignments card*/
-	#js-student-myAssignmentsWrapper section a {
-		background-color: transparent;
-		border-color: var(--border-color);
-	}
-	#js-student-myAssignmentsWrapper section a div {
-		color: var(--main-text-color);
-	}
-	#js-student-myAssignmentsWrapper section div {
-		border-color: var(--border-color);
-	}
-	/* specific to resources card */
-	#resourcesTitle button {
-		background-color: #FFF0;
-		color: var(--main-text-color);
-		border-width: 0;
-	}
+    }
+    #js-student-home-notices h2,
+    .studentModuleLayout h2 {
+        background-color: rgba(255, 255, 255, var(--second-layer-brightness));
+        border-width: 0;
+        color: var(--main-text-color);
+    }
+    #js-student-home-notices p,
+    #js-student-home-notices h3,
+    #js-student-home-notices li,
+    #js-student-home-notices div button,
+    .studentModuleLayout div p,
+    .studentModuleLayout div h3,
+    .studentModuleLayout div li,
+    .studentModuleLayout div button {
+        color: var(--main-text-color);
+    }
+    /* Specific to assignments card*/
+    #js-student-myAssignmentsWrapper section a {
+        background-color: transparent;
+        border-color: var(--border-color);
+    }
+    #js-student-myAssignmentsWrapper section a div {
+        color: var(--main-text-color);
+    }
+    #js-student-myAssignmentsWrapper section div {
+        border-color: var(--border-color);
+    }
+    /* specific to resources card */
+    #resourcesTitle button {
+        background-color: #FFF0;
+        color: var(--main-text-color);
+        border-width: 0;
+    }
     #resourcesTitle {
         border-radius: 0.3125rem;
     }
@@ -122,16 +121,16 @@
         border-radius: 0.3125rem;
     }
 
-	/* ------------------------------------------
+    /* ------------------------------------------
 	 *  My assignments page
 	 * ------------------------------------------
 	 */
-	#js-student-myAssignmentsPage section table thead tr,
-	#js-student-myAssignmentsPage section table thead th {
-		background-color: rgba(255, 255, 255, var(--second-layer-brightness));
-		color: var(--main-text-color);
-		border-color: var(--border-color);
-	}
+    #js-student-myAssignmentsPage section table thead tr,
+    #js-student-myAssignmentsPage section table thead th {
+        background-color: rgba(255, 255, 255, var(--second-layer-brightness));
+        color: var(--main-text-color);
+        border-color: var(--border-color);
+    }
     #js-student-myAssignmentsPage section table thead tr:first-child,
     #js-student-myAssignmentsPage section table thead th:first-child {
         border-radius: 0.3125rem 0 0 0;
@@ -140,22 +139,22 @@
     #js-student-myAssignmentsPage section table thead th:last-child {
         border-radius: 0 0.3125rem 0 0;
     }
-    
-	#js-student-myAssignmentsPage section {
-		border-width: 0;
-	}
-	#js-student-myAssignmentsPage section table tbody > tr {
-		background-color: rgba(255, 255, 255, var(--first-layer-brightness));
-		border-color: var(--border-color);
-	}
-	#js-student-myAssignmentsPage section table tbody > tr > th {
-		color: var(--main-text-color);
-	}
+
+    #js-student-myAssignmentsPage section {
+        border-width: 0;
+    }
+    #js-student-myAssignmentsPage section table tbody > tr {
+        background-color: rgba(255, 255, 255, var(--first-layer-brightness));
+        border-color: var(--border-color);
+    }
+    #js-student-myAssignmentsPage section table tbody > tr > th {
+        color: var(--main-text-color);
+    }
     #js-student-myAssignmentsPage > div > div > div button {
         background-color: var(--blue-text-color);
         color: whitesmoke;
     }
-    
+
     /* ------------------------------------------
 	 *  Calendar Page, need !important due to inline styling
 	 * ------------------------------------------
@@ -164,12 +163,12 @@
     .studentCalendar {
         border: none !important;
     }
-    
+
     .studentCalendar .calendarTop {
         background-color: rgba(255, 255, 255, var(--second-layer-brightness)) !important;
         border-radius: 0.3125rem 0.3125rem 0 0;
         font-size: 1em;
-        border-bottom: solid 1px var(--border-color); 
+        border-bottom: solid 1px var(--border-color);
     }
     .studentCalendar .calendarTop a {
         color: var(--blue-text-color);
@@ -177,34 +176,35 @@
     .studentCalendar .calendarTop a:hover {
         color: var(--main-text-color);
     }
-    
+
     .studentCalendar .dayLabels {
         background: rgba(255, 255, 255, var(--first-layer-brightness)) !important;
         padding: 4px 0;
     }
-    
+
     .studentCalendar .days {
         background-color: transparent !important;
     }
-    
+
     .studentCalendar .days li {
         background-color: rgba(255, 255, 255, var(--first-layer-brightness));
         border-radius: 0 0 5px 5px;
         width: calc(100% / 7);
     }
-    .studentCalendar .days li .cNum { /* day numbers */
+    .studentCalendar .days li .cNum {
+        /* day numbers */
         background-color: rgba(255, 255, 255, var(--second-layer-brightness));
         border-radius: 5px 5px 0 0;
     }
-    
+
     .studentCalendar .days li a {
         color: var(--blue-text-color)
     }
-    
+
     .studentCalendar .days li.weekEnd {
         width: calc(100% / 7 - 4px);
     }
-    
+
     /* ------------------------------------------
      *  Main Page (landing page)
      * ------------------------------------------
@@ -235,7 +235,7 @@
     .home-rotator {
         background-color: transparent;
     }
-    
+
     /* ------------------------------------------
      *  Custom scrollbar
      * ------------------------------------------
@@ -243,26 +243,27 @@
     ::-webkit-scrollbar-button {
         background-color: transparent;
     }
-    
+
     ::-webkit-scrollbar {
         background-color: rgba(255, 255, 255, var(--first-layer-brightness));
         width: 10px;
+        height: 10px;
+        border-radius: 10px;
     }
-    
+
     ::-webkit-scrollbar-thumb {
         background: var(--blue-text-color);
         overflow: hidden;
         border-radius: 6px;
-        
     }
     ::-webkit-scrollbar-thumb:hover {
         background-color: #0087cc;
     }
-    
+
     ::-webkit-scrollbar-track {
         background-color: transparent;
     }
-    
+
     /* corner where vertical and horizontal bars meet */
     ::-webkit-scrollbar-corner {
         background-color: rgba(255, 255, 255, var(--first-layer-brightness));
@@ -270,268 +271,361 @@
 }
 
 @-moz-document url-prefix("https://www.webassign.net/wa-auth/login") {
-	
-	html {
-		background-color: transparent;
-	}
-	
-	.this-is-hydra,
-	.login-container[_ngcontent-c1] {
-		background-color: var(--main-color);
-	}
-	
-	.this-is-hydra h2,
-	.this-is-hydra div {
-		color: var(--main-text-color);
-	}
-	
-	.this-is-hydra .login-container .login-form[_ngcontent-c1] {
-		background-color: rgba(255, 255, 255, var(--first-layer-brightness));
-		border-width: 0;
-		border-radius: 0.3125rem;
-	}
-	
-	.header-bar .enroll {
-		background-color: #cc0000;
-		color: #FFFFFF;
-	}
-	
-	.auth-container a,
-	.input-group .forget {
-		color: var(--main-text-color);
-	}
-	.auth-container a:hover {
-		color: var(--blue-text-color);
-	}
-	
-	.auth-container .input-group input {
-		background-color: rgba(255, 255, 255, .08);
-		box-shadow: none;
-		border-color: var(--border-color);
-		color: var(--main-text-color);
-	}
+
+    html {
+        background-color: transparent;
+    }
+
+    .this-is-hydra,
+    .login-container[_ngcontent-c1] {
+        background-color: var(--main-color);
+    }
+
+    .this-is-hydra h2,
+    .this-is-hydra div {
+        color: var(--main-text-color);
+    }
+
+    .this-is-hydra .login-container .login-form[_ngcontent-c1] {
+        background-color: rgba(255, 255, 255, var(--first-layer-brightness));
+        border-width: 0;
+        border-radius: 0.3125rem;
+    }
+
+    .header-bar .enroll {
+        background-color: #cc0000;
+        color: #FFFFFF;
+    }
+
+    .auth-container a,
+    .input-group .forget {
+        color: var(--main-text-color);
+    }
+    .auth-container a:hover {
+        color: var(--blue-text-color);
+    }
+
+    .auth-container .input-group input {
+        background-color: rgba(255, 255, 255, .08);
+        box-shadow: none;
+        border-color: var(--border-color);
+        color: var(--main-text-color);
+    }
 }
 
 @-moz-document url-prefix("https://www.webassign.net/web/Student") {
-	#js-assignment-header h1 {
-		color: var(--blue-text-color);
-	}
-	
-	/* ----- Header stuff -------- */
-	
-	#js-assignment-header div,
-	#js-assignment-header div span {
-		color: var(--main-text-color);
-	}
-	#js-assignment-header div svg {
-		fill: var(--main-text-color);
-	}
-	
-	/* ------- Assignment information cards -----------*/
-	
-	#js-assignment-wrapper > div > div,
-	#js-assignment-wrapper > div > section {
-		color: var(--main-text-color);
-		background-color: rgba(255, 255, 255, var(--first-layer-brightness));
-		margin: 5px;
-		border-width: 0;
-		border-radius: 0 0 0.3125rem 0.3125rem;
-	}
-	#js-assignment-wrapper > div > div > h2,
-	#js-assignment-wrapper > div > section h2 {
-		color: var(--main-text-color);
-		background-color: rgba(255, 255, 255, var(--second-layer-brightness));
-		border-color: var(--border-color);
-		border-width: 0;
-	}
-	#js-assignment-wrapper > div span,
-	#js-assignment-wrapper h3,
-	#js-assignment-wrapper p {
-		color: var(--main-text-color) !important; /* Have to overrule their important */
-	}
-	
-	#js-assignment-wrapper > div > div > div > div > div {
-		background-color: transparent;
-		border-color: var(--border-color);
-		border-radius: 0.3125rem;
-	}
-	
-	#js-assignment-wrapper table a div {
-		background-color: transparent;
-		color: var(--main-text-color);
-		border-color: var(--border-color);
-	}
-	
-	#js-assignment-wrapper table a:hover div,
-	#js-assignment-wrapper table a:hover div p {
-		color: var(--blue-text-color) !important; /* Having to overrule their important chain */
-		text-decoration-color: var(--blue-text-color);
-	}
-	
-	#js-assignment-wrapper > div > div > div > div > div div:first-child {
-		background-color: rgba(255, 255, 255, var(--first-layer-brightness));
-		border-color: var(--border-color);
-	}
-	
-	#js-assignment-wrapper button,
-	#printAssignment {
-		background-color: var(--blue-text-color);
-		color: #FFF;
-		border-color: var(--blue-text-color);
-	}
-	#js-assignment-wrapper button span,
-	#printAssignment span {
-		color: #FFF !important;
-	}
-	
-	/* ------------ Main content and problems --------------- */
-	
-	.qUtility > .container,
-	.waQBox .qUtility .qButtons {
-		margin-left: 10px;
-		margin-top: 0px;
-		background-color: rgba(255, 255, 255, var(--first-layer-brightness));
-		border-width: 0;
-	}
-	
-	.waQBox .qUtility .qContent {
-		background-color: rgba(255, 255, 255, var(--first-layer-brightness));
-		border-color: var(--border-color);
-		border-radius: 0 0 0.3125rem 0.3125rem;
-		border-width: 0;
-	}
-	
-	.qContent .wa1par,
-	.qContent .sublabel,
-	.qContent .wa1ans {
-		color: var(--main-text-color);
-	}
-	
-	.waQBox > .qAlert {
-		background-color: transparent;
-		border-width: 0;
-	}
-	
-	#webAssign input[type=submit] {
-		color: var(--blue-text-color);
-		padding: 0 15px;
-		height: 37px;
-		border-color: var(--blue-text-color);
-		border-radius: 5px;
-		border-width: 2px;
-		background: none;
-		transition: background 0.35s ease 0s, color 0.35s ease 0s;
-	}
-	
-	#webAssign input[type=submit]:hover {
-		background-color: var(--blue-text-color);
-		color: #FFF;
-	}
-	
-	.js-question-header > article > section {
-		background-color: rgba(255, 255, 255, var(--second-layer-brightness));
-		border-color: var(--border-color);
-		color: var(--main-text-color);
-		border-width: 0;
-	}
-    
-    img[src^='/latex'], img[src^='/cgi-perl'] {
+    #js-assignment-header h1 {
+        color: var(--blue-text-color);
+    }
+
+    /* ----- Header stuff -------- */
+    #js-assignment-header div,
+    #js-assignment-header div span {
+        color: var(--main-text-color);
+    }
+    #js-assignment-header div svg {
+        fill: var(--main-text-color);
+    }
+
+    /* ------- Assignment information cards -----------*/
+    #js-assignment-wrapper > div > div,
+    #js-assignment-wrapper > div > section {
+        color: var(--main-text-color);
+        background-color: rgba(255, 255, 255, var(--first-layer-brightness));
+        margin: 5px;
+        border-width: 0;
+        border-radius: 0 0 0.3125rem 0.3125rem;
+    }
+    #js-assignment-wrapper > div > div > h2,
+    #js-assignment-wrapper > div > section h2 {
+        color: var(--main-text-color);
+        background-color: rgba(255, 255, 255, var(--second-layer-brightness));
+        border-color: var(--border-color);
+        border-width: 0;
+    }
+    #js-assignment-wrapper > div span,
+    #js-assignment-wrapper h3,
+    #js-assignment-wrapper p {
+        color: var(--main-text-color) !important;
+        /* Have to overrule their important */
+    }
+
+    #js-assignment-wrapper > div > div > div > div > div {
+        background-color: transparent;
+        border-color: var(--border-color);
+        border-radius: 0.3125rem;
+    }
+
+    #js-assignment-wrapper table a div {
+        background-color: transparent;
+        color: var(--main-text-color);
+        border-color: var(--border-color);
+    }
+
+    #js-assignment-wrapper table a:hover div,
+    #js-assignment-wrapper table a:hover div p {
+        color: var(--blue-text-color) !important;
+        /* Having to overrule their important chain */
+        text-decoration-color: var(--blue-text-color);
+    }
+
+    #js-assignment-wrapper > div > div > div > div > div div:first-child {
+        background-color: rgba(255, 255, 255, var(--first-layer-brightness));
+        border-color: var(--border-color);
+    }
+
+    #js-assignment-wrapper button,
+    #printAssignment {
+        background-color: var(--blue-text-color);
+        color: #FFF;
+        border-color: var(--blue-text-color);
+    }
+    #js-assignment-wrapper button span,
+    #printAssignment span {
+        color: #FFF !important;
+    }
+
+    /* ------------ Main content and problems --------------- */
+    .qUtility > .container,
+    .waQBox .qUtility .qButtons {
+        margin-left: 10px;
+        margin-top: 0px;
+        background-color: rgba(255, 255, 255, var(--first-layer-brightness));
+        border-width: 0;
+    }
+
+    .waQBox .qUtility .qContent {
+        background-color: rgba(255, 255, 255, var(--first-layer-brightness));
+        border-color: var(--border-color);
+        border-radius: 0 0 0.3125rem 0.3125rem;
+        border-width: 0;
+    }
+
+    .qContent .wa1par,
+    .qContent .sublabel,
+    .qContent .wa1ans {
+        color: var(--main-text-color);
+    }
+
+    .waQBox > .qAlert {
+        background-color: transparent;
+        border-width: 0;
+    }
+
+    #webAssign input[type=submit] {
+        color: var(--blue-text-color);
+        padding: 0 15px;
+        height: 37px;
+        border-color: var(--blue-text-color);
+        border-radius: 5px;
+        border-width: 2px;
+        background: none;
+        transition: background 0.35s ease 0s, color 0.35s ease 0s;
+    }
+
+    #webAssign input[type=submit]:hover {
+        background-color: var(--blue-text-color);
+        color: #FFF;
+    }
+
+    .js-question-header > article > section {
+        background-color: rgba(255, 255, 255, var(--second-layer-brightness));
+        border-color: var(--border-color);
+        color: var(--main-text-color);
+        border-width: 0;
+    }
+
+    img[src^='/latex'],
+    img[src^='/cgi-perl'] {
         background-color: white;
     }
-	
-	/* --------- Text Fields and Buttons --------------- */
-	
-	.js-question-header > article > section button {
-		color: var(--blue-text-color);
-	}
-	.js-question-header > article > section button:not(:disabled):hover {
-		background-color: var(--blue-text-color);
-		color: #FFF;
-		border-color: var(--blue-text-color);
-	}
-	
-	.qTextField input[type=text] {
-		background-color: rgba(255, 255, 255, var(--first-layer-brightness));
-		border-radius: 2px;
-		border-style: solid;
-	}
-	
-	#webAssign input {
-		color: #FFF;
-	}
-	
-	.additional {
-		border-color: var(--border-color);
-		border-radius: 5px;
-	}
-	
-	.additional h1 {
-		background-color: rgba(255, 255, 255, var(--first-layer-brightness));
-		border-radius: 5px 5px 0 0;
-		border-bottom: 1px;
-	}
-	.additional li,
-	.additional li a {
-		color: var(--blue-text-color);
-	}
-	
-	.section .section_content {
-		background-color: transparent !important;
-	}
-	
-	.tutorialButton,
-	.tutorialButton a {
-		color: var(--blue-text-color);
-		background-color: transparent;
-		border-color: var(--blue-text-color);
-		border-width: 2px;
-		border-radius: 5px;
-	}
-	
-	.static {
-		color: var(--main-text-color);
-		background-color: var(--main-color);
-	}
-	
-	.qContent .pse8ae .pse8QuestionBlock {
-		background-color: transparent;
-	}
-	
-	.qContent .pse8ae .pse8Header {
-		border-color: var(--border-color);
-		border-bottom: 1px dashed;
-	}
-	
-	.qContent .pse8ae .pse8HeaderTitle,
-	.qContent .pse8ae .pse8HintTitle {
-		color: var(--blue-text-color);
-	}
-	
-	/* --------- Testing/accordian stuff ------------ */
-	.qContent .accordion .element {
-		background-color: transparent;
-	}
-	
-	.qContent ul.accordion > li {
-		background-color: transparent;
-		border-color: var(--border-color);
-	}
-	
-	.qContent ul.accordion li .titleBar {
-		background-color: rgba(255, 255, 255, var(--first-layer-brightness));
-	}
-    
+
+    /* --------- Text Fields and Buttons --------------- */
+    .js-question-header > article > section button {
+        color: var(--blue-text-color);
+    }
+    .js-question-header > article > section button:not(:disabled):hover {
+        background-color: var(--blue-text-color);
+        color: #FFF;
+        border-color: var(--blue-text-color);
+    }
+
+    .qTextField input[type=text] {
+        background-color: rgba(255, 255, 255, var(--first-layer-brightness));
+        border-radius: 2px;
+        border-style: solid;
+    }
+
+    #webAssign input {
+        color: #FFF;
+    }
+
+    .mathpad-wrapper span.mq-cursor {
+        border-color: white;
+    }
+
+    .additional {
+        border-color: var(--border-color);
+        border-radius: 5px;
+    }
+
+    .additional h1 {
+        background-color: rgba(255, 255, 255, var(--first-layer-brightness));
+        border-radius: 5px 5px 0 0;
+        border-bottom: 1px;
+    }
+    .additional li,
+    .additional li a {
+        color: var(--blue-text-color);
+    }
+
+    .section .section_content {
+        background-color: transparent !important;
+    }
+
+    .tutorialButton,
+    .tutorialButton a {
+        color: var(--blue-text-color);
+        background-color: transparent;
+        border-color: var(--blue-text-color);
+        border-width: 2px;
+        border-radius: 5px;
+    }
+
+    .static {
+        color: var(--main-text-color);
+        background-color: var(--main-color);
+    }
+
+    .qContent .pse8ae .pse8QuestionBlock {
+        background-color: transparent;
+    }
+
+    .qContent .pse8ae .pse8Header {
+        border-color: var(--border-color);
+        border-bottom: 1px dashed;
+        z-index: -10;
+    }
+
+    .qContent .pse8ae .pse8HeaderTitle,
+    .qContent .pse8ae .pse8HintTitle {
+        color: var(--blue-text-color);
+    }
+
+    .qContent .pse8ae .pse8FigureCaption {
+        color: var(--main-color);
+    }
+
+    /* --------- Testing/accordian stuff ------------ */
+    .qContent .accordion .element {
+        background-color: transparent;
+    }
+
+    .qContent ul.accordion > li {
+        background-color: transparent;
+        border-color: var(--border-color);
+    }
+
+    .qContent ul.accordion li .titleBar {
+        background-color: rgba(255, 255, 255, var(--first-layer-brightness));
+    }
+
     /* ---------- Details/Notes/Ask Teacher/Practice Another accordions ---------- */
     .js-question-header > article > section > div > div > div:not(p) {
         background-color: transparent;
+        border-radius: 0 0 0.3125em 0.3125em !important;
     }
-	
+
+    .js-question-header > article > section button {
+        transition: background 0.35s ease 0s;
+    }
+
+    .js-question-header > article > section button:not(:disabled):focus {
+        background: rgb(0, 98, 152);
+        color: white;
+        border-color: rgb(0, 98, 152);
+    }
+
+    .js-question-header > article > section > div {
+        border-radius: 10px;
+    }
+
+    .js-question-header > article > section > div > div > div {
+        background: transparent !important;
+        border-width: 0;
+    }
+
+    .js-question-header > article > section > div > div > div > div {
+        background: rgba(255, 255, 255, var(--second-layer-brightness));
+    }
+
+    .js-question-header > article > section > div > div > div > div h4 {
+        color: var(--blue-text-color);
+    }
+
+    .js-question-header > article > section > div > div > div > div > div > div {
+        background: transparent;
+        border-width: 0;
+        box-shadow: none;
+    }
+
+    .js-question-header > article > section > div > div > div > div form,
+    .js-question-header > article > section > div > div > div > div form label {
+        background: none;
+        color: var(--main-text-color);
+        padding: 0;
+    }
+
+    .js-question-header > article > section > div > div > div > div textarea {
+        background-color: var(--main-color);
+        border: 1px solid var(--border-color);
+        color: var(--main-text-color) !important;
+        min-height: 100px;
+    }
+
+    .js-question-header > article > section > div > div > div > div button {
+        border-color: var(--blue-text-color);
+        color: white;
+    }
+
+    .js-question-header > article > section > div > div > div > div button:disabled {
+        color: var(--main-color);
+    }
+
+    .js-question-header > article > section > div > div > div > div table {
+        color: var(--main-text-color);
+        background-color: transparent;
+    }
+
+    .js-question-header > article > section > div > div > div > div table th {
+        color: var(--main-text-color);
+    }
+
+    /* - Practice Another and prev. answer iframe stuff - */
+    .container.popupWrap .popupContent,
+    .previousAnswersContainer .container.popupWrap {
+        background: transparent !important;
+    }
+
+    #webAssign.previousAnswersContainer {
+        background-color: rgba(255, 255, 255, var(--second-layer-brightness)) !important;
+    }
+
+    #webAssign.previousAnswersContainer form > .qResponse {
+        background-color: var(--main-color);
+    }
+
+    #webAssign.previousAnswersContainer form > .qResponse .title {
+        background-color: transparent;
+        color: var(--main-text-color);
+    }
+
     /* ---------- Solution/Explanation Container ------------------ */
     .qContent .solutionContainer {
         border-radius: 5px;
         border: 1px solid var(--border-color);
     }
-    
+
     .solutionContainer .solutionHeadContainer {
         background-color: rgba(255, 255, 255, var(--first-layer-brightness));
         border-radius: 5px 5px 0 0;
@@ -539,26 +633,50 @@
         font-weight: bold;
         color: var(--blue-text-color)
     }
-    
+
     .solutionContainer .solutionContent {
         padding: 10px;
     }
+
+    /* ----- Page footer with submit assignment button ------- */
+    #js-page-bottom > div > div {
+        background-color: rgba(255, 255, 255, var(--first-layer-brightness));
+        box-shadow: none;
+        border-width: 0;
+    }
+
+    #js-page-bottom div button {
+        background-color: var(--blue-text-color);
+        border-width: 0;
+        padding: 10px 20px;
+        color: #FFF;
+    }
+
+    #js-page-bottom div button:hover {
+        background-color: rgba(255, 255, 255, var(--first-layer-brightness));
+    }
+}
+
+@-moz-document regexp(".*/v4cgi/react/.*") {
+    /* --------- Practice another page ---------*/
+    #practice,
+    .qContent .pse8ae .pse8QuestionBlock,
+    #popupWrap {
+        background-color: var(--main-color);
+    }
     
-	/* ----- Page footer with submit assignment button ------- */
-	#js-page-bottom > div > div {
-		background-color: rgba(255, 255, 255, var(--first-layer-brightness));
-		box-shadow: none;
-		border-width: 0;
-	}
-	
-	#js-page-bottom div button {
-		background-color: var(--blue-text-color);
-		border-width: 0;
-		padding: 10px 20px;
-		color: #FFF;
-	}
-	
-	#js-page-bottom div button:hover {
-		background-color: rgba(255, 255, 255, var(--first-layer-brightness));
-	}
+    .qContent .pse8ae .pse8FigureCaption {
+        color: black;
+    }
+    
+    .mathpad-wrapper span.mq-cursor {
+        border-color: white;
+    }
+    
+    .qTextField input[type^='text'] {
+        background-color: rgba(255, 255, 255, var(--first-layer-brightness));
+        color: var(--main-text-color);
+        box-shadow: none;
+        border: 1px solid var(--border-color);
+    }
 }
