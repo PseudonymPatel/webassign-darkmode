@@ -11,7 +11,7 @@
 @var color main-color "Main color for everything to be based on. Also try #000005" #121212
 @var color border-color "Color to make borders" #676767
 @var number first-layer-brightness "How bright to make first level of brightness (0 - 1)" [0.05, 0, 10, 0.01]
-@var number second-layer-brightness "brightness of second level of brightness (0 - 1)" [0.9, 0, 1, 0.01]
+@var number second-layer-brightness "brightness of second level of brightness (0 - 1)" [0.09, 0, 1, 0.01]
 @var color blue-text-color "Color to make blue things/accent. Also try #1073aa" rgb(0, 123, 191)
 @var color main-text-color "Color to make majority of text. Also try #abb1c8" rgb(176, 179, 198)
 
@@ -24,7 +24,7 @@
 
 	:root {
 		--svg-color: var(--main-text-color);
-		--calced: calc(var(--second-layer-brightness) - var(--first-layer-brightness));
+		--brighness-diff: calc(var(--second-layer-brightness) - var(--first-layer-brightness));
 	}
 
 	body {
@@ -44,16 +44,28 @@
 	#studentHeader {
 		color: var(--main-text-color);
 	}
+    
+    #studentHeader button {
+        color: var(--blue-text-color);
+    }
 
 	/* Small language indicator color */
 	#studentHeader div div div div {
 		color: var(--main-text-color);
 	}
+    
+    #studentHeader div div div div[lang]:hover {
+        background-color: var(--blue-text-color);
+    }
 
 	#studentHeader div div div ul {
 		background-color: var(--main-color);
 	}
 
+    #studentSubHeader {
+        background-color: var(--blue-text-color);
+    }
+    
 	/* Purchase now countdown timer */
 	#js-countdown-purchase-access {
 		background-color: rgba(255, 255, 255, var(--first-layer-brightness));
@@ -84,7 +96,7 @@
 	}
 	#js-student-home-notices h2,
 	.studentModuleLayout h2 {
-		background-color: rgba(255, 255, 255, var(--second-layer-brightness));
+		background-color: rgba(255, 255, 255, var(--brighness-diff));
 		border-width: 0;
 		color: var(--main-text-color);
 	}
@@ -109,6 +121,11 @@
 	#js-student-myAssignmentsWrapper section div {
 		border-color: var(--border-color);
 	}
+    #js-student-myAssignmentsWrapper section div button {
+        background-color: var(--blue-text-color);
+        border-color: var(--blue-text-color);
+    }
+    
 	/* specific to resources card */
 	#resourcesTitle button {
 		background-color: #FFF0;
@@ -129,7 +146,7 @@
 	 */
 	#js-student-myAssignmentsPage section table thead tr,
 	#js-student-myAssignmentsPage section table thead th {
-		background-color: rgba(255, 255, 255, var(--second-layer-brightness));
+		background-color: rgba(255, 255, 255, var(--brighness-diff));
 		color: var(--main-text-color);
 		border-color: var(--border-color);
 	}
@@ -154,7 +171,7 @@
 	}
 	#js-student-myAssignmentsPage > div > div > div button {
 		background-color: var(--blue-text-color);
-		color: whitesmoke;
+		color: #f5f5f5;
 	}
 
 	/* ------------------------------------------
@@ -195,8 +212,7 @@
 	}
 	.studentCalendar .days li .cNum {
 		/* day numbers */
-		background-color: rgba(255, 255, 255, var(--second-layer-brightness));
-		border-radius: 5px 5px 0 0;
+		background-color: rgba(255, 255, 255, var(--brighness-diff));
 	}
 
 	.studentCalendar .days li a {
@@ -244,6 +260,8 @@
      */
 	::-webkit-scrollbar-button {
 		background-color: transparent;
+        height: 0;
+        width: 0;
 	}
 
 	::-webkit-scrollbar {
@@ -272,7 +290,7 @@
 	}
 }
 
-@-moz-document url-prefix("https://www.webassign.net/wa-auth/login") {
+@-moz-document url-prefix("https://www.webassign.net/wa-auth/") {
 
 	html {
 		background-color: transparent;
@@ -282,22 +300,52 @@
 	.login-container[_ngcontent-c1] {
 		background-color: var(--main-color);
 	}
+    
+    button.wa-primary {
+        background-color: #cc0000;
+        color: #FFF;
+        transition: background-color ease 0.2s;
+    }
+    button.wa-primary:hover {
+        background-color: #aa0000;
+        color: #FFF;
+        transition: background-color ease 0.2s;
+    }
 
+    button.wa-secondary {
+        background-color: transparent;
+    }
+    
 	.this-is-hydra h2,
 	.this-is-hydra div {
 		color: var(--main-text-color);
 	}
 
-	.this-is-hydra .login-container .login-form[_ngcontent-c1] {
-		background-color: rgba(255, 255, 255, var(--first-layer-brightness));
+    .this-is-hydra .login-container .login-form[_ngcontent-c1] {
+        background-color: transparent;
+        border: none;
+    }
+    
+    .login-container[_ngcontent-c1] h2[_ngcontent-c1] {
+        margin-top: 70px;
+    }
+    
+    .this-is-hydra .auth-container {
+		background-color: rgba(255, 255, 255, var(--brighness-diff));
 		border-width: 0;
 		border-radius: 0.3125rem;
 	}
 
 	.header-bar .enroll {
 		background-color: #cc0000;
-		color: #FFFFFF;
+		color: #FFF;
+        transition: background-color ease 0.2s;
 	}
+    .header-bar .enroll:hover {
+        background-color: #aa0000;
+        color: #FFF;
+        transition: background-color ease 0.2s;
+    }
 
 	.auth-container a,
 	.input-group .forget {
@@ -308,26 +356,49 @@
 	}
 
 	.auth-container .input-group input {
-		background-color: rgba(255, 255, 255, .08);
+		background-color: var(--main-color);
 		box-shadow: none;
 		border-color: var(--border-color);
 		color: var(--main-text-color);
 	}
+    
+    .error-box[_ngcontent-c2] {
+        outline: none;
+    }
 }
 
 @-moz-document url-prefix("https://www.webassign.net/web/Student") {
+    
+    #js-assignment-wrapper {
+        margin-bottom: 5px;
+    }
+    
 	#js-assignment-header h1 {
-		color: var(--blue-text-color);
+		color: var(--main-text-color);
 	}
 
 	/* ----- Header stuff -------- */
 	#js-assignment-header div,
-	#js-assignment-header div span {
+	#js-assignment-header div span{
 		color: var(--main-text-color);
 	}
 	#js-assignment-header div svg {
 		fill: var(--main-text-color);
 	}
+    
+    #js-assignment-header div button,
+    #js-assignment-header div button svg {
+        color: var(--blue-text-color);
+        fill: #FFF;
+        transition: ease 1s;
+    }
+    #js-assignment-header div button:hover,
+    #js-assignment-header div button svg:hover {
+        color: var(--blue-text-color);
+        fill: #FFF;
+        margin-left: -10px;
+        transition: ease 1s;
+    }
 
 	/* ------- Assignment information cards -----------*/
 	#js-assignment-wrapper > div > div,
@@ -341,7 +412,7 @@
 	#js-assignment-wrapper > div > div > h2,
 	#js-assignment-wrapper > div > section h2 {
 		color: var(--main-text-color);
-		background-color: rgba(255, 255, 255, var(--calced));
+		background-color: rgba(255, 255, 255, var(--brighness-diff));
 		border-color: var(--border-color);
 		border-width: 0;
 	}
@@ -388,12 +459,17 @@
 	}
 
 	/* ------------ Main content and problems --------------- */
-	.qUtility > .container,
+    .waQBox {
+        margin: 0 5px 1em 5px;
+    }
+    
+    .qUtility > .container,
 	.waQBox .qUtility .qButtons {
 		margin-left: 10px;
 		margin-top: 0px;
 		background-color: rgba(255, 255, 255, var(--first-layer-brightness));
 		border-width: 0;
+        border-radius: 0 0 0.3125rem 0.3125rem;
 	}
 
 	.waQBox .qUtility .qContent {
@@ -435,11 +511,12 @@
 		border-color: var(--border-color);
 		color: var(--main-text-color);
 		border-width: 0;
+        border-radius: 0.3125rem 0.3125rem 0 0.3125rem;
 	}
 
 	img[src^='/latex'],
 	img[src^='/cgi-perl'] {
-		background-color: white;
+		background-color: #FFF;
 	}
 	
 	.watexfraction .watexdenominator {
@@ -458,7 +535,7 @@
 
 	.qTextField input[type=text] {
 		background-color: rgba(255, 255, 255, var(--first-layer-brightness));
-		border-radius: 2px;
+		border-radius: 0.3125rem;
 		border-style: solid;
 	}
 
@@ -467,7 +544,7 @@
 	}
 
 	.mathpad-wrapper span.mq-cursor {
-		border-color: white;
+		border-color: #FFF;
 	}
 
 	.additional {
@@ -553,7 +630,7 @@
 
 	.js-question-header > article > section button:not(:disabled):focus {
 		background: rgb(0, 98, 152);
-		color: white;
+		color: #FFF;
 		border-color: rgb(0, 98, 152);
 	}
 
@@ -596,7 +673,7 @@
 
 	.js-question-header > article > section > div > div > div > div button {
 		border-color: var(--blue-text-color);
-		color: white;
+		color: #FFF;
 	}
 
 	.js-question-header > article > section > div > div > div > div button:disabled {
@@ -666,6 +743,15 @@
 	#js-page-bottom div button:hover {
 		background-color: rgba(255, 255, 255, var(--first-layer-brightness));
 	}
+    
+    /* --------- Below submission stuff footer ------------ */
+    #js-assignment-take-footer div button {
+        color: var(--blue-text-color);
+        text-decoration: none;
+    }
+    #js-assignment-take-footer div button:hover {
+        text-decoration: underline;
+    }
 }
 
 @-moz-document regexp(".*/v4cgi/.*") {
@@ -681,7 +767,7 @@
 	}
 
 	.mathpad-wrapper span.mq-cursor {
-		border-color: white;
+		border-color: #FFF;
 	}
 
 	.qTextField input[type^='text'] {
