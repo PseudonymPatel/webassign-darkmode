@@ -4,7 +4,7 @@
 @namespace    https://github.com/PseudonymPatel/webassign-darkmode
 @homepageURL  https://github.com/PseudonymPatel/webassign-darkmode
 @updateURL    https://raw.githubusercontent.com/PseudonymPatel/webassign-darkmode/master/webassign-darkmode.user.css
-@version      0.5
+@version      0.5.0
 @license      MIT
 @preprocessor less
 
@@ -19,9 +19,9 @@
 @-moz-document domain("webassign.net") {
 
 	/* -----------------------------------------
-    *   Body and site-wide styling 
-    *  -----------------------------------------
-    */
+	*   Body and site-wide styling 
+	*  -----------------------------------------
+	*/
 	body {
 		background-color: @main-color;
 		color: @main-text-color;
@@ -219,9 +219,9 @@
 	}
 
 	/* ------------------------------------------
-     *  Main Page (landing page)
-     * ------------------------------------------
-     */
+	 *  Main Page (landing page)
+	 * ------------------------------------------
+	 */
 	.nav-header .genesis-nav-menu .menu-item.search {
 		border-top-color: transparent;
 	}
@@ -486,6 +486,10 @@
 	}
 
 	#webAssign input[type=submit] {
+		text-transform: uppercase;
+		font-family: "Open Sans", sans-serif;
+		font-size: 14px;
+		font-weight: 600;
 		color: @accent-color;
 		padding: 0 15px;
 		height: 37px;
@@ -519,15 +523,6 @@
 	}
 
 	/* --------- Text Fields and Buttons --------------- */
-	.js-question-header > article > section button {
-		color: @accent-color;
-	}
-	.js-question-header > article > section button:not(:disabled):hover {
-		background-color: @accent-color;
-		color: #FFF;
-		border-color: @accent-color;
-	}
-
 	.qTextField input[type=text] {
 		background-color: lighten(@main-color, @first-layer-brightness);
 		border-radius: 0.3125rem;
@@ -613,6 +608,46 @@
 		background-color: lighten(@main-color, @first-layer-brightness);
 	}
 
+	/* ---------- Show my Work ------------ */
+	#webAssign .smw {
+		background-color: lighten(@main-color, @second-layer-brightness);
+		border-radius: 0.3125em;
+	}
+	
+	.smwTextContainer .waOverlay {
+		border-color: @border-color;
+		border-radius: 0.3125rem;
+		background-color: @main-color !important;
+		padding: 5px;
+		width: calc(100% - 10px) !important;
+		height: calc(100% - 10px) !important;
+	}
+	
+	.waUploadWrap .waUpload {
+		.waAttach,
+		.fileList .file-img {
+			color: @accent-color;
+		}
+		
+		strong,
+		.fileList {
+			color: @main-text-color;
+		}
+	}
+	
+	.smw .ribbon.container {
+		background-color: lighten(@main-color, @first-layer-brightness);
+		border-color: @border-color;
+	}
+	
+	.smw .smwAnswerWrap {
+		width: 100%;
+	}
+	
+	.smw .smwAnswerWrap .smwAnswer p {
+		color: @main-text-color;
+	}
+	
 	/* ---------- Details/Notes/Ask Teacher/Practice Another accordions ---------- */
 	.js-question-header > article > section > div > div > div:not(p) {
 		background-color: transparent;
@@ -620,13 +655,22 @@
 	}
 
 	.js-question-header > article > section button {
-		transition: background 0.35s ease 0s;
+		border-color: @accent-color;
+		background-color: transparent;
+		transition: background 0.35s ease 0s, color 0.35s ease 0s;
+		color: @accent-color;
+	}
+	
+	.js-question-header > article > section button:not(:disabled):hover {
+		background-color: @accent-color;
+		color: #FFF;
+		border-color: @accent-color;
 	}
 
 	.js-question-header > article > section button:not(:disabled):focus {
-		background: rgb(0, 98, 152);
+		background-color: @accent-color;
 		color: #FFF;
-		border-color: rgb(0, 98, 152);
+		border-color: @accent-color;
 	}
 
 	.js-question-header > article > section > div {
@@ -638,50 +682,65 @@
 		border-width: 0;
 	}
 
+	/* Why does this look weird? (nested) It's because of less! Note: this leads to the .css-1rmd0ik generated div tag. */
 	.js-question-header > article > section > div > div > div > div {
 		background: lighten(@main-color, @second-layer-brightness);
-	}
+		
+		h4 {
+			color: @accent-color;
+		}
+		
+		h5 {
+			color: @accent-color;
+		}
 
-	.js-question-header > article > section > div > div > div > div h4 {
-		color: @accent-color;
-	}
+		div > div {
+			background: transparent;
+			border-width: 0;
+			box-shadow: none;
+		}
+		
+		div[data-test^='showMyWork'],
+		div[data-test^='questionTotalScore'] {
+			background-color: transparent;
+			color: @main-text-color;
+			border-color: @border-color;
+			border-radius: 0.3125rem;
+			border-width: 1px;
+		}
 
-	.js-question-header > article > section > div > div > div > div > div > div {
-		background: transparent;
-		border-width: 0;
-		box-shadow: none;
-	}
+		form,
+		form label {
+			background: none;
+			color: @main-text-color;
+			padding: 0;
+		}
 
-	.js-question-header > article > section > div > div > div > div form,
-	.js-question-header > article > section > div > div > div > div form label {
-		background: none;
-		color: @main-text-color;
-		padding: 0;
-	}
+		textarea {
+			background-color: @main-color;
+			border: 1px solid @border-color;
+			color: @main-text-color !important;
+			min-height: 100px;
+		}
 
-	.js-question-header > article > section > div > div > div > div textarea {
-		background-color: @main-color;
-		border: 1px solid @border-color;
-		color: @main-text-color !important;
-		min-height: 100px;
-	}
+		button {
+			border-color: @accent-color;
+			color: #FFF;
+		}
 
-	.js-question-header > article > section > div > div > div > div button {
-		border-color: @accent-color;
-		color: #FFF;
-	}
+		button:disabled {
+			color: @main-color;
+		}
 
-	.js-question-header > article > section > div > div > div > div button:disabled {
-		color: @main-color;
-	}
+		table {
+			color: @main-text-color;
+			background-color: transparent;
+		}
 
-	.js-question-header > article > section > div > div > div > div table {
-		color: @main-text-color;
-		background-color: transparent;
-	}
-
-	.js-question-header > article > section > div > div > div > div table th {
-		color: @main-text-color;
+		table th {
+			color: @main-text-color;
+		}
+		
 	}
 
 	/* - Practice Another and prev. answer iframe stuff - */
@@ -746,6 +805,10 @@
 	}
 	#js-assignment-take-footer div button:hover {
 		text-decoration: underline;
+	}
+	
+	footer#studentFooter {
+		background-color: lighten(@main-color, @first-layer-brightness);
 	}
 }
 
