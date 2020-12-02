@@ -10,10 +10,10 @@
 
 @var color main-color "Main color for everything to be based on. Also try #000005" #121212
 @var color border-color "Color to make borders" #676767
-@var number first-layer-brightness "How bright to make first level of brightness (0 - 100%)" [2, 0, 100, 1, "%"]
-@var number second-layer-brightness "brightness of second level of brightness (0 - 100%)" [9, 0, 100, 1, "%"]
-@var color accent-color "Color to make blue things/accent. Also try #1073aa" rgb(0, 123, 191)
-@var color main-text-color "Color to make majority of text. Also try #abb1c8" rgb(176, 179, 198)
+@var number first-layer-brightness "How bright to make first level of brightness (0 - 100%)" [8, 0, 100, 1, "%"]
+@var number second-layer-brightness "brightness of second level of brightness (0 - 100%)" [12, 0, 100, 1, "%"]
+@var color accent-color "Color to make blue things/accent" #118fcf
+@var color main-text-color "Color to make majority of text." #bec0ca
 
 ==/UserStyle== */
 @-moz-document domain("webassign.net") {
@@ -532,6 +532,13 @@
 	#webAssign input {
 		color: #FFF;
 	}
+	
+	#webAssign textarea {
+		background-color: @main-color;
+		color: @main-text-color;
+		border-color: @border-color;
+		border-radius: 0.3125rem;
+	}
 
 	.mathpad-wrapper span.mq-cursor {
 		border-color: #FFF;
@@ -594,6 +601,19 @@
 		color: @main-color;
 	}
 
+	/* Manual grading blob */
+	.manualGrading {
+		border-color: @border-color;
+		border-radius: 0.3125rem;
+		
+		p {
+			color: @main-text-color;
+		}
+		.teacher-comments {
+			font-style: italic;
+		}
+	}
+	
 	/* --------- Testing/accordian stuff ------------ */
 	.qContent .accordion .element {
 		background-color: transparent;
@@ -760,6 +780,10 @@
 	#webAssign.previousAnswersContainer form > .qResponse .title {
 		background-color: transparent;
 		color: @main-text-color;
+	}
+	
+	.mathquill-embedded-latex.disabled {
+		background-color: @main-color;
 	}
 
 	/* ---------- Solution/Explanation Container ------------------ */
