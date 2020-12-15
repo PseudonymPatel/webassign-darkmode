@@ -4,7 +4,7 @@
 @namespace    https://github.com/PseudonymPatel/webassign-darkmode
 @homepageURL  https://github.com/PseudonymPatel/webassign-darkmode
 @updateURL    https://raw.githubusercontent.com/PseudonymPatel/webassign-darkmode/master/webassign-darkmode.user.css
-@version      0.5.1
+@version      0.5.2
 @license      MIT
 @preprocessor less
 
@@ -17,7 +17,7 @@
 
 ==/UserStyle== */
 @-moz-document domain("webassign.net") {
-
+	
 	/* -----------------------------------------
 	*   Body and site-wide styling 
 	*  -----------------------------------------
@@ -120,7 +120,8 @@
 		background-color: transparent;
 		border-color: @border-color;
 	}
-	#js-student-myAssignmentsWrapper section a:hover {
+	#js-student-myAssignmentsWrapper section a:hover,
+	#js-student-myAssignmentsWrapper section a:focus {
 		box-shadow: @accent-color 0px 0px 0rem 0.3125rem;
 	}
 
@@ -471,14 +472,13 @@
 		fill: @main-text-color;
 	}
 
-	#js-assignment-header div button,
-	#js-assignment-header div button svg {
+	#js-assignment-header div #wa a,
+	#js-assignment-header div #wa a svg {
 		color: @accent-color;
 		fill: #FFF;
 		transition: ease 1s;
 	}
-	#js-assignment-header div #wa button:hover,
-	#js-assignment-header div #wa button svg:hover {
+	#js-assignment-header div #wa a:hover {
 		color: @accent-color;
 		fill: #FFF;
 		margin-left: -10px;
@@ -539,6 +539,7 @@
 		border-color: @accent-color;
 		transition: background-color ease 0.2s;
 	}
+	
 	#js-assignment-wrapper button:hover,
 	#printAssignment:hover {
 		background-color: darken(@accent-color, @first-layer-brightness);
@@ -549,6 +550,10 @@
 	#js-assignment-wrapper button span,
 	#printAssignment span {
 		color: #FFF !important;
+	}
+	
+	#printAssignment svg path {
+		fill: #FFF;
 	}
 
 	/* ------------ Main content and problems --------------- */
@@ -730,6 +735,20 @@
 	#webAssign .smw {
 		background-color: lighten(@main-color, @second-layer-brightness);
 		border-radius: 0.3125em;
+	}
+
+	.smwTextContainer,
+	.smwTextContainer .smwTextArea {
+		background-color: @main-color;
+		color: @main-text-color;
+		text-shadow: none;
+		border-radius: 0.2125rem;
+		border-color: @border-color;
+		
+		.disabled {
+			color: darken(@main-text-color, 20%);
+			opacity: 1;
+		}
 	}
 
 	.smwTextContainer .waOverlay {
