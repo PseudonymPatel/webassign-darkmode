@@ -4,7 +4,7 @@
 @namespace    https://github.com/PseudonymPatel/webassign-darkmode
 @homepageURL  https://github.com/PseudonymPatel/webassign-darkmode
 @updateURL    https://raw.githubusercontent.com/PseudonymPatel/webassign-darkmode/master/webassign-darkmode.user.css
-@version      0.5.2
+@version      0.5.3
 @license      MIT
 @preprocessor less
 
@@ -12,7 +12,7 @@
 @var color border-color "Color to make borders" #676767
 @var number first-layer-brightness "How bright to make first level of brightness (0 - 100%)" [8, 0, 100, 1, "%"]
 @var number second-layer-brightness "brightness of second level of brightness (0 - 100%)" [12, 0, 100, 1, "%"]
-@var color accent-color "Color to make blue things/accent" #118fcf
+@var color accent-color "Color to make blue things/accent" #1190d0
 @var color main-text-color "Color to make majority of text." #bec0ca
 
 ==/UserStyle== */
