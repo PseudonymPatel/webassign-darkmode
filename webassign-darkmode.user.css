@@ -4,7 +4,7 @@
 @namespace    https://github.com/PseudonymPatel/webassign-darkmode
 @homepageURL  https://github.com/PseudonymPatel/webassign-darkmode
 @updateURL    https://raw.githubusercontent.com/PseudonymPatel/webassign-darkmode/master/webassign-darkmode.user.css
-@version      0.5.3
+@version      0.6.0
 @license      MIT
 @preprocessor less
 
@@ -27,6 +27,11 @@
 		color: @main-text-color;
 	}
 
+	a,
+	a:link {
+		color: @accent-color;
+	}
+	
 	#webAssignContent svg,
 	#studentHeader svg {
 		fill: @main-text-color;
@@ -492,7 +497,7 @@
 		background-color: lighten(@main-color, @first-layer-brightness);
 		margin: 5px;
 		border-width: 0;
-		border-radius: 0 0 0.3125rem 0.3125rem;
+		border-radius: 0.3125rem;
 	}
 	#js-assignment-wrapper > div > div > h2,
 	#js-assignment-wrapper > div > section h2 {
@@ -583,9 +588,19 @@
 		color: @main-text-color;
 	}
 
+	/* Next two selectors: Saved work stuff */
 	.waQBox > .qAlert {
 		background-color: transparent;
 		border-width: 0;
+	}
+	
+	#js-student-assignment_saved-notification > div {
+		background: @accent-color;
+		
+		button {
+			background: @accent-color;
+			border-color: @accent-color;
+		}
 	}
 
 	#webAssign input[type=submit] {
@@ -835,6 +850,7 @@
 			background: transparent;
 			border-width: 0;
 			box-shadow: none;
+			color: @main-text-color;
 		}
 
 		div[data-test^='showMyWork'],
@@ -901,6 +917,26 @@
 	.mathquill-embedded-latex.disabled {
 		background-color: @main-color;
 	}
+	
+	iframe[data-test^="practiceAnother"] {
+		border-width: 0;
+		background: transparent;
+	}
+	
+	#pavWrapper6 button {
+		transition: background 0.35s ease 0s, color 0.35s ease 0s;
+		border: 2px solid @accent-color;
+		color: @accent-color;
+		text-transform: uppercase;
+		font-family: "Open Sans", sans-serif;
+	}
+	#pavWrapper6 button:hover {
+		transition: background 0.35s ease 0s, color 0.35s ease 0s;
+		border: 2px solid @accent-color;
+		background-color: @accent-color;
+		color: #FFF;
+		text-transform: uppercase;
+	}
 
 	/* ---------- Solution/Explanation Container ------------------ */
 	.qContent .solutionContainer {
@@ -947,14 +983,19 @@
 	 *  Practice another page 
 	 * ------------------------------
 	 */
+	body {
+		background: lighten(@main-color, @second-layer-brightness);
+		border-width: 0;
+	}
+	
 	#practice,
 	.qContent .pse8ae .pse8QuestionBlock,
 	#popupWrap {
-		background-color: @main-color;
+		background-color: lighten(@main-color, @second-layer-brightness);
 	}
 
 	.qContent .pse8ae .pse8FigureCaption {
-		color: black;
+		color: #000;
 	}
 
 	.mathpad-wrapper span.mq-cursor {
@@ -967,4 +1008,51 @@
 		box-shadow: none;
 		border: 1px solid @border-color;
 	}
+}
+
+@-moz-document regexp(".*/v4cgi/questions/tutorial_popup.*") {
+	/* ------------------------------
+	 *  Tutorial Page, other popup pages. 
+	 * ------------------------------
+	 */
+	
+	#middle {
+		background: @main-color;
+	}
+	
+	#popupWrap .topNavBorder {
+		background: lighten(@main-color, @second-layer-brightness);
+	}
+	
+	#popupWrap #top {
+		background-color: lighten(@main-color, @second-layer-brightness);
+	}
+	
+	.tutorial_popup .section_content {
+		background-color: @main-color !important;
+	}
+	
+	.qContent .tutorial .comp_header_title, .qContent .tutorial_popup .comp_header_title {
+		color: @accent-color;
+	}
+	
+	.qContent .tutorial .header, 
+	.qContent .tutorial_popup .header,
+	.qContent .tutorial .section_content,
+	.qContent .tutorial_popup .section_content {
+		.header_title {
+			background-color: @accent-color;
+		}
+		
+		border-color: @accent-color;
+	}
+	
+	.finalSubmitBox,
+	.finalSubmitBox div {
+		background: @accent-color !important;
+		border-color: @accent-color !important;
+		border-radius: 0.3125rem;
+	}
+	
+	
 }
