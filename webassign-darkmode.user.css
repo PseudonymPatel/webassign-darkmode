@@ -4,7 +4,7 @@
 @namespace    https://github.com/PseudonymPatel/webassign-darkmode
 @homepageURL  https://github.com/PseudonymPatel/webassign-darkmode
 @updateURL    https://raw.githubusercontent.com/PseudonymPatel/webassign-darkmode/master/webassign-darkmode.user.css
-@version      0.6.0
+@version      0.6.1
 @license      MIT
 @preprocessor less
 
@@ -17,7 +17,7 @@
 
 ==/UserStyle== */
 @-moz-document domain("webassign.net") {
-	
+
 	/* -----------------------------------------
 	*   Body and site-wide styling 
 	*  -----------------------------------------
@@ -31,7 +31,7 @@
 	a:link {
 		color: @accent-color;
 	}
-	
+
 	#webAssignContent svg,
 	#studentHeader svg {
 		fill: @main-text-color;
@@ -544,7 +544,7 @@
 		border-color: @accent-color;
 		transition: background-color ease 0.2s;
 	}
-	
+
 	#js-assignment-wrapper button:hover,
 	#printAssignment:hover {
 		background-color: darken(@accent-color, @first-layer-brightness);
@@ -556,7 +556,7 @@
 	#printAssignment span {
 		color: #FFF !important;
 	}
-	
+
 	#printAssignment svg path {
 		fill: #FFF;
 	}
@@ -593,10 +593,10 @@
 		background-color: transparent;
 		border-width: 0;
 	}
-	
+
 	#js-student-assignment_saved-notification > div {
 		background: @accent-color;
-		
+
 		button {
 			background: @accent-color;
 			border-color: @accent-color;
@@ -759,7 +759,7 @@
 		text-shadow: none;
 		border-radius: 0.2125rem;
 		border-color: @border-color;
-		
+
 		.disabled {
 			color: darken(@main-text-color, 20%);
 			opacity: 1;
@@ -917,12 +917,12 @@
 	.mathquill-embedded-latex.disabled {
 		background-color: @main-color;
 	}
-	
+
 	iframe[data-test^="practiceAnother"] {
 		border-width: 0;
 		background: transparent;
 	}
-	
+
 	#pavWrapper6 button {
 		transition: background 0.35s ease 0s, color 0.35s ease 0s;
 		border: 2px solid @accent-color;
@@ -983,11 +983,6 @@
 	 *  Practice another page 
 	 * ------------------------------
 	 */
-	body {
-		background: lighten(@main-color, @second-layer-brightness);
-		border-width: 0;
-	}
-	
 	#practice,
 	.qContent .pse8ae .pse8QuestionBlock,
 	#popupWrap {
@@ -1015,44 +1010,42 @@
 	 *  Tutorial Page, other popup pages. 
 	 * ------------------------------
 	 */
-	
 	#middle {
 		background: @main-color;
 	}
-	
+
 	#popupWrap .topNavBorder {
 		background: lighten(@main-color, @second-layer-brightness);
 	}
-	
+
 	#popupWrap #top {
 		background-color: lighten(@main-color, @second-layer-brightness);
 	}
-	
+
 	.tutorial_popup .section_content {
 		background-color: @main-color !important;
 	}
-	
-	.qContent .tutorial .comp_header_title, .qContent .tutorial_popup .comp_header_title {
+
+	.qContent .tutorial .comp_header_title,
+	.qContent .tutorial_popup .comp_header_title {
 		color: @accent-color;
 	}
-	
-	.qContent .tutorial .header, 
+
+	.qContent .tutorial .header,
 	.qContent .tutorial_popup .header,
 	.qContent .tutorial .section_content,
 	.qContent .tutorial_popup .section_content {
 		.header_title {
 			background-color: @accent-color;
 		}
-		
+
 		border-color: @accent-color;
 	}
-	
+
 	.finalSubmitBox,
 	.finalSubmitBox div {
 		background: @accent-color !important;
 		border-color: @accent-color !important;
 		border-radius: 0.3125rem;
 	}
-	
-	
 }
