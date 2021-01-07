@@ -4,7 +4,7 @@
 @namespace    https://github.com/PseudonymPatel/webassign-darkmode
 @homepageURL  https://github.com/PseudonymPatel/webassign-darkmode
 @updateURL    https://raw.githubusercontent.com/PseudonymPatel/webassign-darkmode/master/webassign-darkmode.user.css
-@version      0.6.1
+@version      0.6.2
 @license      MIT
 @preprocessor less
 
@@ -26,7 +26,7 @@
 		background-color: @main-color;
 		color: @main-text-color;
 	}
-
+	
 	a,
 	a:link {
 		color: @accent-color;
@@ -879,6 +879,13 @@
 		button {
 			border-color: @accent-color;
 			color: #FFF;
+			background-color: @accent-color;
+		}
+		
+		button:hover {
+			border-color: @accent-color;
+			color: #FFF;
+			background-color: darken(@accent-color, @first-layer-brightness) !important;
 		}
 
 		button:disabled {
@@ -892,6 +899,20 @@
 
 		table th {
 			color: @main-text-color;
+		}
+		
+		div[data-testid^='messageBody'] {
+			p {
+				color: @main-text-color;
+			}
+			
+			border-width: 1px;
+			background-color: lighten(@main-color, @first-layer-brightness);
+		}
+		div[data-testid^='messageBody'] div:first-child {
+			position: relative;
+			border-width: 1px;
+			border-color: @border-color;
 		}
 	}
 
